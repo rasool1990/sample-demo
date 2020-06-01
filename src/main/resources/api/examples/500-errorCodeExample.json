@@ -1,0 +1,8 @@
+{
+  "code": 500,
+  "message": "Internal Server Error",
+  "description": "Server encountered an error.",
+  "datetime" : "2020-12-29T12:09:30Z",
+  "transaction-id": "c9f0ecd4-d6e5-4fc1-aa8d-b6102a598ac1"
+}
+

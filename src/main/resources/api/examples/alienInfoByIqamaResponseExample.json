@@ -1,0 +1,19 @@
+{
+  "logId": 0,
+  "firstName": "arabic First Name",
+  "secondName": "arabic Second Name",
+  "thirdName": "arabic Third Name",
+  "lastName": "arabic Last Name",
+  "englishFirstName": "First Name",
+  "englishSecondName": "Second Name",
+  "englishThirdName": "Third Name",
+  "englishLastName": "Last Name",
+  "dateOfBirthG": "20-01-2000",
+  "gender": "M",
+  "sponsorName": "test",
+  "socialStatusCode": "A123",
+  "nationalityCode": "B123",
+  "occupationCode": 0,
+  "iqamaExpiryDateG": "20-01-2000"
+  
+}

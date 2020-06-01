@@ -1,0 +1,18 @@
+{
+  "companyAddressInfoByCrResult":
+  {
+    "logId": 0,
+    "addressListList": {
+      "additionalNumber" : 99,
+      "buildingNumber" : 1,
+      "city" : "jeddah",
+      "district" : "jeddah",
+      "isPrimaryAddress" : true,
+      "locationCoordinates": "local",
+      "postCode": 123,
+      "streetName" : "jeddah street",
+      "unitNumber":8
+
+      }
+  }
+}

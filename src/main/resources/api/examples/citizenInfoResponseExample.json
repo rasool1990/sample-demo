@@ -1,0 +1,18 @@
+
+{
+  "logId": 0,
+  "firstName": "arabic First Name",
+  "fatherName": "father Name",
+  "grandFatherName": "grand father Name",
+  "familyName": "family Name",
+  "englishFirstName": "First Name",
+  "englishSecondName": "Second Name",
+  "englishThirdName": "Third Name",
+  "englishLastName": "Last Name",
+  "gender": "M",
+  "dateOfBirthH": "20-01-2000",
+  "socialStatusDesc": "sample description",
+  "idExpiryDate": "20-01-2000"
+  
+}
+
