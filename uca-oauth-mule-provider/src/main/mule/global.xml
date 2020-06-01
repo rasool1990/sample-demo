@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:oauth2-provider="http://www.mulesoft.org/schema/mule/oauth2-provider"
+	xmlns:os="http://www.mulesoft.org/schema/mule/os" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd
+http://www.mulesoft.org/schema/mule/oauth2-provider http://www.mulesoft.org/schema/mule/oauth2-provider/current/mule-oauth2-provider.xsd">
+	
+	<os:object-store name="client_objectStore" doc:name="Object store" doc:id="56dba0c6-34de-415a-89a4-dcef6a497472" />
+	<os:object-store name="token_objectStore" doc:name="Object store" doc:id="b0a67f27-371d-4cb4-8d26-2cef5939abeb" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7153a38b-a368-4270-92dc-37bb8dfc76db" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<oauth2-provider:config name="OAuth2_Provider_Config" doc:name="OAuth2 Provider Config" doc:id="872b3540-f1b9-4f58-9808-36447ef9ec3e" providerName="OAuth2_Provider" listenerConfig="HTTP_Listener_config" clientStore="client_objectStore" supportedGrantTypes="${oauth.supportedgranttype}" >
+		<oauth2-provider:client-validation-rate-limiter >
+			<oauth2-provider:period-rate-limiter duration="${oauth.client.duration}" />
+		</oauth2-provider:client-validation-rate-limiter>
+		<oauth2-provider:token-config tokenStore="token_objectStore" path="${oauth.token.path}" tokenTtl="${oauth.token.ttl}" tokenTtlTimeUnit="MINUTES">
+		</oauth2-provider:token-config>
+	</oauth2-provider:config>
+	<configuration-properties doc:name="Configuration properties" doc:id="56798b46-835e-447d-b442-42a21b84d4d4" file="config/${mule.env}.yaml" />
+	
+</mule>

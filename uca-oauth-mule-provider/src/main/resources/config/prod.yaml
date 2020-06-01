@@ -1,0 +1,17 @@
+#This file contains properties for dev environment
+
+http:
+  host: "0.0.0.0"
+  port: "8081"
+  
+https:
+  host: "0.0.0.0"
+  port: "8091"
+
+oauth:
+  client:
+    duration: "600" 
+  token:
+    ttl: "5"
+    path: "/access-token"
+  supportedgranttype:  "CLIENT_CREDENTIALS"

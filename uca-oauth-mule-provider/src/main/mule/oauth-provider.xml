@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:oauth2-provider="http://www.mulesoft.org/schema/mule/oauth2-provider"
+	xmlns:os="http://www.mulesoft.org/schema/mule/os"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd
+http://www.mulesoft.org/schema/mule/oauth2-provider http://www.mulesoft.org/schema/mule/oauth2-provider/current/mule-oauth2-provider.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="oauth-createClientFlow" doc:id="61b17aca-79dc-4087-b9ed-0c69ed18b6b8" >
+		<http:listener doc:name="Listener" doc:id="8b8c0d50-5fa8-43c4-bff6-667771e786c3" config-ref="HTTP_Listener_config" path="/createClient"/>
+		<oauth2-provider:create-client doc:name="Create client" doc:id="c2da5d3b-d9a1-4618-aa8a-ca804d104db5" config-ref="OAuth2_Provider_Config" clientId="#[attributes.headers.client_id]" type="CONFIDENTIAL" secret="#[attributes.headers.client_secret]" clientName='#[""]' description='#[""]' principal='#[""]' redirectUris='#[[]]' authorizedGrantTypes='#[["CLIENT_CREDENTIALS"]]' scopes="#[[]]" failIfPresent="true"/>
+		<set-payload value='#["Client created successfully”"]' doc:name="Set Payload" doc:id="d62b79ee-89c0-405b-9146-91d31d62615d" />
+	</flow>
+	<flow name="oauth-validateTokenFlow" doc:id="d6c56644-11af-4ff9-a2c6-12bf4f8c1ff9" >
+		<http:listener doc:name="Listener" doc:id="ecc4ecb4-1d22-420b-97c8-e6d53c85d438" config-ref="HTTP_Listener_config" path="/validate"/>
+		<oauth2-provider:validate-token doc:name="Validate token" doc:id="e2d2c2c5-ebb5-4aac-a79b-2e860a7c9e6d" config-ref="OAuth2_Provider_Config" scopes="#[[]]"/>
+	</flow>
+</mule>
