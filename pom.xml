@@ -26,7 +26,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<standaloneDeployment>
-						<muleVersion>${version}</muleVersion>
+						<muleVersion>1.0.0-SNAPSHOT</muleVersion>
 						<muleHome>${mule.home}</muleHome>        
 					</standaloneDeployment>
                 		</configuration>
