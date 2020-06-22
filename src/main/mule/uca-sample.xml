@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="15d848d1-adab-43f6-9b6c-05cc660e762c" >
-		<http:listener-connection host="0.0.0.0" port="8082" />
+		<http:listener-connection host="0.0.0.0" port="8182" />
 	</http:listener-config>
 	<flow name="uca-sampleFlow" doc:id="3f98f112-513a-484f-a22a-6ee2c224cc96" >
 		<http:listener doc:name="Listener" doc:id="1dcd76ee-30f3-4394-a4b9-954730d80fa0" config-ref="HTTP_Listener_config" path="/test"/>
